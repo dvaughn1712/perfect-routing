@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MongoDB/MongoDB.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:PerfectServer/PerfectServer.xcodeproj">
    </FileRef>
    <FileRef

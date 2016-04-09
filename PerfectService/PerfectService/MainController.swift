@@ -1,5 +1,6 @@
 
 import PerfectLib
+import MongoDB
 
 public class MainController {
 	
@@ -9,7 +10,6 @@ public class MainController {
 	
 	func testRequest(request: WebRequest, response: WebResponse) {
 		response.appendBodyString("RESPONSE FROM \(self.dynamicType) \(#function)")
-		
 	}
 	
 	func getUser(request: WebRequest, response: WebResponse) {
@@ -19,6 +19,29 @@ public class MainController {
 	
 	func addUser(request: WebRequest, response: WebResponse) {
 		response.appendBodyString("<html><body>Echo 3 handler: You POSTED to path \(request.requestURI()) with variables \(request.urlVariables)</body></html>")
+		
+		do {
+			let userModel = UserModel(databaseName: "TestData")
+			let jsonObject: [String: Any] = [
+				"username": request.urlVariables["id"]!,
+				"password": "whatever"
+			]
+			
+			let result = try userModel.insert(jsonObject)
+			print(result)
+			userModel.close()
+		} catch {
+			print("there was an error: \(error)")
+		}
+		
+		print(mongoClient!.getDatabase("TestData").collectionNames())
+		print(mongoClient!.getDatabase("TestData").getCollection("Users").count(try! BSON(json: "{}")))
+		let cursor = mongoClient!.getDatabase("TestData").getCollection("Users").find(try! BSON(json: "{}"))
+		
+		while let data = cursor?.next() {
+			print("CURSOR DATA: \(data)")
+		}
+
 		response.requestCompletedCallback()
 	}
 }

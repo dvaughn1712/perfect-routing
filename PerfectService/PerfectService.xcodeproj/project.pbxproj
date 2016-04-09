@@ -10,9 +10,13 @@
 		CB164EC71CACB1C800472735 /* PerfectService.h in Headers */ = {isa = PBXBuildFile; fileRef = CB164EC61CACB1C800472735 /* PerfectService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB164ECE1CACB1C800472735 /* PerfectService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB164EC31CACB1C800472735 /* PerfectService.framework */; };
 		CB164ED31CACB1C800472735 /* PerfectServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB164ED21CACB1C800472735 /* PerfectServiceTests.swift */; };
+		CB16CBC61CADC3600082DB96 /* MongoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB16CBC51CADC3600082DB96 /* MongoDB.framework */; };
+		CB16CBC81CADCAC90082DB96 /* Server_Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16CBC71CADCAC90082DB96 /* Server_Config.swift */; };
 		CB16FB521CAD789E00B84667 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16FB511CAD789E00B84667 /* Routing.swift */; };
 		CB16FB581CAD7CCB00B84667 /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB16FB571CAD7CCB00B84667 /* PerfectLib.framework */; };
 		CB16FB5A1CAD8A5C00B84667 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16FB591CAD8A5C00B84667 /* MainController.swift */; };
+		CBC78FDA1CB8A06600F31F50 /* MongoSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC78FD81CB8A06600F31F50 /* MongoSchema.swift */; };
+		CBC78FDB1CB8A06600F31F50 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC78FD91CB8A06600F31F50 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +36,13 @@
 		CB164ECD1CACB1C800472735 /* PerfectServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB164ED21CACB1C800472735 /* PerfectServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectServiceTests.swift; sourceTree = "<group>"; };
 		CB164ED41CACB1C800472735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB16FB511CAD789E00B84667 /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
-		CB16FB571CAD7CCB00B84667 /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectLib.framework; path = "../../../Library/Developer/Xcode/DerivedData/Perfect-dishfnziwjnaxjfagrifxsoeozou/Build/Products/Debug/PerfectLib.framework"; sourceTree = "<group>"; };
-		CB16FB591CAD8A5C00B84667 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		CB16CBC51CADC3600082DB96 /* MongoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MongoDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB16CBC71CADCAC90082DB96 /* Server_Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Server_Config.swift; path = PerfectService/Server_Config.swift; sourceTree = "<group>"; };
+		CB16FB511CAD789E00B84667 /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routing.swift; path = PerfectService/Routing.swift; sourceTree = "<group>"; };
+		CB16FB571CAD7CCB00B84667 /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PerfectLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB16FB591CAD8A5C00B84667 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = PerfectService/MainController.swift; sourceTree = "<group>"; };
+		CBC78FD81CB8A06600F31F50 /* MongoSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MongoSchema.swift; sourceTree = "<group>"; };
+		CBC78FD91CB8A06600F31F50 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB16FB581CAD7CCB00B84667 /* PerfectLib.framework in Frameworks */,
+				CB16CBC61CADC3600082DB96 /* MongoDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +69,8 @@
 		CB164EB91CACB1C800472735 = {
 			isa = PBXGroup;
 			children = (
-				CB16FB571CAD7CCB00B84667 /* PerfectLib.framework */,
+				CBC78FD61CB8A04100F31F50 /* Linked */,
+				CBC78FD51CB8A03A00F31F50 /* Source */,
 				CB164EC51CACB1C800472735 /* PerfectService */,
 				CB164ED11CACB1C800472735 /* PerfectServiceTests */,
 				CB164EC41CACB1C800472735 /* Products */,
@@ -79,8 +89,6 @@
 		CB164EC51CACB1C800472735 /* PerfectService */ = {
 			isa = PBXGroup;
 			children = (
-				CB16FB511CAD789E00B84667 /* Routing.swift */,
-				CB16FB591CAD8A5C00B84667 /* MainController.swift */,
 				CB164EC61CACB1C800472735 /* PerfectService.h */,
 				CB164EC81CACB1C800472735 /* Info.plist */,
 			);
@@ -94,6 +102,35 @@
 				CB164ED41CACB1C800472735 /* Info.plist */,
 			);
 			path = PerfectServiceTests;
+			sourceTree = "<group>";
+		};
+		CBC78FD51CB8A03A00F31F50 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CBC78FD71CB8A05700F31F50 /* Models */,
+				CB16FB591CAD8A5C00B84667 /* MainController.swift */,
+				CB16CBC71CADCAC90082DB96 /* Server_Config.swift */,
+				CB16FB511CAD789E00B84667 /* Routing.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		CBC78FD61CB8A04100F31F50 /* Linked */ = {
+			isa = PBXGroup;
+			children = (
+				CB16CBC51CADC3600082DB96 /* MongoDB.framework */,
+				CB16FB571CAD7CCB00B84667 /* PerfectLib.framework */,
+			);
+			name = Linked;
+			sourceTree = "<group>";
+		};
+		CBC78FD71CB8A05700F31F50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBC78FD81CB8A06600F31F50 /* MongoSchema.swift */,
+				CBC78FD91CB8A06600F31F50 /* UserModel.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB16FB521CAD789E00B84667 /* Routing.swift in Sources */,
+				CBC78FDA1CB8A06600F31F50 /* MongoSchema.swift in Sources */,
 				CB16FB5A1CAD8A5C00B84667 /* MainController.swift in Sources */,
+				CBC78FDB1CB8A06600F31F50 /* UserModel.swift in Sources */,
+				CB16CBC81CADCAC90082DB96 /* Server_Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
