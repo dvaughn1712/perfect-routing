@@ -15,7 +15,7 @@ class Router {
 		
 		Routing.Routes["GET", "/test"] = Request.handle(mainController.testRequest)
 		
-		Routing.Routes["GET", "/user/{id}"] = Request.handle(mainController.getUser)
+		Routing.Routes["GET", ["/user/{id}", "/user/{id}/{firstName}/{lastName}"]] = Request.handle(mainController.getUser)
 		
 		Routing.Routes["POST", "/user/{id}/baz"] = Request.handle(mainController.addUser)
 		// Check the console to see the logical structure of what was installed.

@@ -1,32 +1,30 @@
 import MongoDB
-import PerfectLib
 
 struct UserModel: MongoSchema {
 	
 	let collection: MongoCollection
+	let userName: String
+	let firstName: String
+	let lastName: String
 	
-	init(databaseName: String) {
-		collection = MongoCollection(client: mongoClient!, databaseName: databaseName, collectionName: "Users")
-	}
-	
-	func insert(jsonObject: [String: Any]) throws -> Bool {
-		do {
-			let jsonString = try JSONEncoder().encode(jsonObject)
-			let document = try BSON(json: jsonString)
-			let result = collection.insert(document)
-			switch result {
-			case .Success:
-				return true
-			default:
-				return false
-			}
-		} catch {
-			print(error)
+	init?(collectionName: String, params: Any?...) {
+		collection = MongoCollection(client: mongoClient!, databaseName: mongoDatabase.name(), collectionName: "Users")
+		guard let userName = params[0] as? String,
+			let firstName = params[1] as? String,
+			let lastName = params[2] as? String else {
+				return nil
 		}
-		return false
+		self.userName = userName
+		self.firstName = firstName
+		self.lastName = lastName
 	}
-
-	func close() {
-		collection.close()
+	
+	func toJSON() -> [String : Any] {
+		let json: [String: Any] = [
+			"userName": userName,
+			"firstName": firstName,
+			"lastName": lastName
+		]
+		return json
 	}
 }
